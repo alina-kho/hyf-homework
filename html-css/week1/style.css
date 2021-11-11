@@ -137,5 +137,9 @@ a:visited {
   .flex-container {
     flex-direction: column-reverse;
   }
+  
+  h1 {
+    font-size: 2.5em;
+  }
 
 }
