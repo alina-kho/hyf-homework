@@ -124,6 +124,7 @@ a:visited {
   body {
     padding: 5% 5%;
     flex: 1;
+    border-radius: 0%;
   }
 
   .main-info {
