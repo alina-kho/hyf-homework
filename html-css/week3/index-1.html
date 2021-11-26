@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700&display=swap');
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="images/logo.png" alt="logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="#">shop</a></li>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">contacts</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="greeting">
+        <h1>Sign up to hykofashion.com</h1>
+        <p>We can't wait to help you improve your life-style and gain the attention from people around you!</p>
+        <p>Sign up below to save up to 70% on apparel, hand-bags,and cosmetics. Our agents are busy picking the best offers that match your preferences and style. Every week we will send you a hand-picked selection - we just need to know a few details about you first... </p>
+      </section>
+      <section class="step-intro">
+        <h3>Step 1/4 - Tell us who you are?</h3>
+        <div class="status-bar">
+          <div id="step-1">
+          </div>
+        </div>
+        <p>Nice to meet you. Let's spend a minute to get to know each other? Please enter the following</p>
+      </section>
+      <form class="step-one" action="index-2.html" method="post">
+        <p>
+          <label for="fname">First name*:</label>
+          <input type="text" name="fname" id="fname" required>
+          <label for="lname">Last name*:</label>
+          <input type="text" name="lname" id="lname" required>
+        </p>
+        <label for="country">Country*:</label>
+        <select name="country" id="country" required>
+          <option value="DK">Denmark</option>
+          <option value="D">Germany</option>
+          <option value="IS">Iceland</option>
+          <option value="N">Norway</option>
+          <option value="S">Sweden</option>
+        </select>
+        <p>
+          <label for="street">Street address*:</label>
+          <input type="text" name="street" id="street" required>
+          <label for="post-code">Post code*:</label>
+          <input type="text" name="post-code" id="post-code" maxlength="4" required>
+        </p>
+        <p>Use the same address for billing and shipping? Uncheck below to fill out a separate shipping address.</p>
+        <label for="shipping">Shipping</label>
+        <input type="checkbox" name="shipping" id="shipping" checked="true">
+        <div class="invisible">
+          <h4>Shipping Address</h4>
+          <p>
+            <label for="fname-ship">First Name*:</label>
+            <input type="text" name="fname-ship" id="fname-ship">
+            <label for="lname-ship">Last Name*:</label>
+            <input type="text" name="lname-ship" id="lname-ship">
+          </p>
+          <label for="country-ship">Country*:</label>
+          <select name="country-ship" id="country-ship">
+            <option value="DK">Denmark</option>
+            <option value="D">Germany</option>
+            <option value="IS">Iceland</option>
+            <option value="N">Norway</option>
+            <option value="S">Sweden</option>
+          </select>
+          <p>
+            <label for="street-ship">Street address*:</label>
+            <input type="text" name="street-ship" id="street-ship">
+            <label for="post-code-ship">Post code*:</label>
+            <input type="tel" pattern="\d*" name="post-code-ship" id="post-code-ship" maxlength="4">
+          </p>
+        </div>
+        <div class="description">
+          <div class="d-label">
+            <label for="profile">Profile description</label>
+            <p id="note">
+              Please provide a short description of yourself to be displayed
+            </p>
+          </div>
+          <textarea name="profile-desc" id="profile" rows="10" cols="50" maxlength="500"></textarea>
+        </div>
+        <p>
+          <button type="submit" name="next">Next Step</button>
+        </p>
+      </form>
+    </main>
+  </body>
+</html>

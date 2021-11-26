@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700&display=swap');
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="images/logo.png" alt="logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="#">shop</a></li>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">contacts</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Sign up to hykofashion.com</h1>
+      <section class="step-intro">
+        <h2>Step 4/4 - Payment</h2>
+        <div class="status-bar">
+          <div id="step-4">
+          </div>
+        </div>
+      </section>
+      <p>Please fill in your payment data</p>
+      <form class="step-four" action="index-4.html" method="get">
+        <label>Name on card*: <input type="text" name="card-name" required></label>
+        <p>
+          <label for="card-type">Card type</label>
+          <select id="card-type" name="card-type">
+            <option value="MC">MasterCard</option>
+            <option value="Visa">Visa</option>
+            <option value="American">AmericanExpress</option>
+          </select>
+        </p>
+        <label>Credit card number*: <input type="text" name="card-number" inputmode="num" pattern="\d*" maxlength="16" minlength="16" required></label>
+        <label>Expiration date*: <input type="month" name="expires" required></label>
+        <p>
+          <label>CCV*: <input id="ccv" type="tel" name="ccv" pattern="\d*" minlength="3" maxlength="3"></label>
+        </p>
+        <p>
+          <button type="submit" name="next">Next Step</button>
+        </p>
+      </form>
+    </main>
+  </body>
+</html>

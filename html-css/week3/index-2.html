@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;700&display=swap');
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="images/logo.png" alt="logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="#">shop</a></li>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">contacts</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Sign up to hykofashion.com</h1>
+      <section class="step-intro">
+        <h2>Step 2/4 - Tell us who you are?</h2>
+        <div class="status-bar">
+          <div id="step-2">
+          </div>
+        </div>
+        <p>We will probably need to stay in touch somehow. Let us know how we can reach you.</p>
+      </section>
+      <form class="step-two" action="index-3.html" method="post">
+        <p>
+          <label for="email">Email*:</label>
+          <input type="email" name="email" id="email" required>
+          <label for="phone">Phone:</label>
+          <input type="tel" name="phone" id="phone">
+        </p>
+        <label for="password">Password*:</label>
+        <input type="password" name="password" id="password" pattern="[a-zA-Z]" minlength="10" required>
+        <p>
+          <label for="password-2">Confirm Password*:</label>
+          <input type="password" name="password-2" id="password-2" pattern="[a-zA-Z]" minlength="10" required>
+        </p>
+        <p>I want to sign up for a newsletter.</p>
+        <label for="weekly">Weekly news</label>
+        <input type="radio" name="newsletter" id="weekly" value="weekly" required>
+        <label for="monthly">Monthly news</label>
+        <input type="radio" name="newsletter" id="monthly" value="monthly" required>
+        <label for="no">Don't send me news</label>
+        <input type="radio" name="newsletter" id="no" value="no" required>
+        <p>
+          <button type="submit" name="next">Next Step</button>
+        </p>
+      </form>
+    </main>
+  </body>
+</html>
