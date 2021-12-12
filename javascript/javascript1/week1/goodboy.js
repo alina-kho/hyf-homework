@@ -2,8 +2,8 @@ let dogYearOfBirth = 2016;
 let dogYearFuture = 2025;
 
 //Formulas
-const dogAge = dogYearFuture - dogYearOfBirth;
-const dogYear = dogAge * 7;
+let dogAge = dogYearFuture - dogYearOfBirth;
+let dogYear = dogAge * 7;
 
 let shouldShowResultInDogYears = true;
 
