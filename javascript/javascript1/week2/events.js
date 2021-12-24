@@ -19,6 +19,11 @@ function getEventWeekday(days) {
   return eventDay;
 }
 
+//Simpler way - didn't come up to my mind right away
+// function getEventWeekday(days){ 
+// eventDay=daysOfWeek[(days + d) % 7];
+// return eventDay;
+
 //Tests
 console.log(getEventWeekday(27));
 console.log(getEventWeekday(658));
