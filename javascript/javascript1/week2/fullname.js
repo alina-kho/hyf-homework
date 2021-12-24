@@ -1,6 +1,6 @@
 function getFullname(firstname, lastname, useFormalName, sex) {
   if (firstname === "" || lastname === "") {
-    alert("Please enter a full name!"); //a bit of validation, so the data is provided
+    console.log("Please enter a full name!"); //a bit of validation, so the data is provided
   } else if (useFormalName === true) {
     if (sex === "male" || sex === "man") {
       return "Lord " + firstname + " " + lastname;
@@ -20,6 +20,6 @@ function getFullname(firstname, lastname, useFormalName, sex) {
 }
 
 //Checking if it works :)
-//getFullname("", "Black", true, "male"); (commented it so you don't get an alert right away)
+getFullname("", "Black", true, "male"); 
 getFullname("Benjamin", "Hughes", true, "male");
 getFullname("Benjamin", "Hughes", false, "male");
