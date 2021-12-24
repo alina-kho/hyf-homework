@@ -32,10 +32,8 @@ function canBuyMoreCandy(candiesBought, budget) {
   }
   if (sum < amountToSpend) {
     console.log("You can buy more, so please do!");
-    return true;
   } else {
     console.log("Enough candy for you!");
-    return false;
   }
 }
 
