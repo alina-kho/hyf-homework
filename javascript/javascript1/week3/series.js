@@ -29,10 +29,7 @@ function getSeriesDuration(seriesDurations) {
       seriesDurations[i].minutes / 60;
     let durationInProcent = (durationInHours / lifeInHours) * 100;
     console.log(
-      seriesDurations[i].title +
-        " took " +
-        durationInProcent.toFixed(3) +
-        "% of my life"
+      `${seriesDurations[i].title} took ${durationInProcent.toFixed(3)} of my life`
     );
     total += durationInProcent;
   }
