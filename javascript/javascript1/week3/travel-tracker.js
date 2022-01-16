@@ -5,8 +5,8 @@ const travelInformation = {
 
 function getTravelTime(object) {
   let travelMinutes = (object.destinationDistance / object.speed) * 60; // getting number of minutes
-  let hours = Math.floor(numValue / 60); // getting hours
-  let minutes = Math.floor(numValue % 60); //getting minutes as an integer
+  let hours = Math.floor(travelMinutes / 60); // getting hours
+  let minutes = Math.floor(travelMinutes % 60); //getting minutes as an integer
   return hours + " hours and " + minutes + " minutes";
 }
 
