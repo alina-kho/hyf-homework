@@ -6,7 +6,7 @@ let todos = []; //declared through let to be able to modify the array through th
 
 //Creating a function
 function getReply(command) {
-  let commandSplitted = command.split(" "); //Splits the command into separate words for easy search through them
+  const commandSplitted = command.split(" "); //Splits the command into separate words for easy search through them
 
   //Name actions
   //.toLowerCase is used to get rid of case sensitivity
@@ -14,7 +14,7 @@ function getReply(command) {
     command.toLowerCase().includes("my name is") ||
     command.toLowerCase().includes("i am")
   ) {
-    let name = commandSplitted[commandSplitted.length - 1];
+    const name = commandSplitted[commandSplitted.length - 1];
     if (name == userName) {
       return `Hi ${userName}! Glad to see you again`;
     } else {
@@ -80,10 +80,10 @@ function getReply(command) {
       "November",
       "December",
     ]; // array created to change a number value to a word
-    let today = new Date(); //getting today's date
-    let day = today.getDate();
-    let month = months[today.getMonth()]; //today.getMonth() will give us a value from 0 to 11, so we can easily apply it to find a month in the months array
-    let year = today.getFullYear();
+    const today = new Date(); //getting today's date
+    const day = today.getDate();
+    const month = months[today.getMonth()]; //today.getMonth() will give us a value from 0 to 11, so we can easily apply it to find a month in the months array
+    const year = today.getFullYear();
     return `Today is the ${day}. of ${month} ${year}`;
   }
 
@@ -140,25 +140,18 @@ function getReply(command) {
     switch (randomNum) {
       case 0:
         return `You are going to have an amazing day!`;
-        break;
       case 1:
         return `Even the worst day has only 24 hours`;
-        break;
       case 2:
         return `Shine bright like a diamond!`;
-        break;
       case 3:
         return `Do a good deed today`;
-        break;
       case 4:
         return `Good fortune will be yours`;
-        break;
       case 5:
         return `You will have very good luck today`;
-        break;
       case 6:
         return `Soon life will become more interesting`;
-        break;
     }
   }
 }
