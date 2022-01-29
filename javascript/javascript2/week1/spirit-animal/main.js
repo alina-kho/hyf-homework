@@ -45,26 +45,35 @@ function getSpiritAnimal() {
     "crazy",
   ];
 
-  let spiritAnimal = `The ${adjectives[Math.floor(Math.random() * 9)]} ${
-    nouns[Math.floor(Math.random() * 9)]
-  } `;
+  let spiritAnimal = `The ${
+    adjectives[Math.floor(Math.random() * adjectives.length)]
+  } ${nouns[Math.floor(Math.random() * nouns.length)]} `;
   return spiritAnimal;
 }
 
+//Creating event functions
+function inputListener(event) {
+  const name = inputField.value;
+  if (name === "") {
+    outputPar.innerHTML = "Please enter your name";
+    button.innerHTML = "Click me"; //in case one wants to get a new name with an empty string
+  } else {
+    let spiritAnimal = getSpiritAnimal();
+    outputPar.innerHTML = `${name} - ${spiritAnimal}`;
+    button.innerHTML = "Get a new name";
+  }
+}
+
+//Function to clear all the event lsiteners
+function clearEventListeners() {
+  document.getElementsByTagName("button")[0].onclick = null;
+  document.getElementsByTagName("input")[0].oninput = null;
+  document.getElementsByTagName("input")[0].onmouseover = null;
+}
 //Default event (since dropdown.onchange requires some "change" to start working)
-// I tried putting it as a default event in the switch statement but it didn't work - why?
+// I tried putting it as a default event in the switch statement but it didn't work - why
 window.onload = function (event) {
-  button.onclick = function (event) {
-    const name = inputField.value;
-    if (name === "") {
-      outputPar.innerHTML = "Please enter your name";
-      button.innerHTML = "Click me"; //in case one wants to get a new name with an empty string
-    } else {
-      let spiritAnimal = getSpiritAnimal();
-      outputPar.innerHTML = `${name} - ${spiritAnimal}`;
-      button.innerHTML = "Get a new name";
-    }
-  };
+  button.onclick = inputListener;
 };
 
 //Selector onchange event
@@ -72,47 +81,16 @@ dropdown.onchange = function (event) {
   const chosenValue = dropdown.value;
   switch (chosenValue) {
     case "click":
-      inputField.oninput = null; //removing the oninput event in case of switching between the options
-      inputField.onmouseover = null; //removing the onmouseover event in case of switching between the options
-      button.onclick = function (event) {
-        const name = inputField.value;
-        if (name === "") {
-          outputPar.innerHTML = "Please enter your name";
-          button.innerHTML = "Click me"; //in case one wants to get a new name with an empty string
-        } else {
-          let spiritAnimal = getSpiritAnimal();
-          outputPar.innerHTML = `${name} - ${spiritAnimal}`;
-          button.innerHTML = "Get a new name";
-        }
-      };
+      clearEventListeners();
+      button.onclick = inputListener;
       break;
 
     case "hover":
-      inputField.oninput = null; // removing the oninput event in case of switching between the options
-      button.onclick = null; // removing the onclick event in case of switching between the options
-      inputField.onmouseover = function (event) {
-        const name = inputField.value;
-        if (name === "") {
-          outputPar.innerHTML = "Please enter your name";
-          button.innerHTML = "Click me"; //in case one wants to get a new name with an empty string
-        } else {
-          let spiritAnimal = getSpiritAnimal();
-          outputPar.innerHTML = `${name} - ${spiritAnimal}`;
-        }
-      };
+      clearEventListeners();
+      inputField.onmouseover = inputListener;
       break;
     case "typing":
-      inputField.onmouseover = null; //removing the onmouseover event in case of switching between the options
-      button.onclick = null; //removing the onclick event in case of switching between the options
-      inputField.oninput = function (event) {
-        const name = inputField.value;
-        if (name === "") {
-          outputPar.innerHTML = "Please enter your name";
-          button.innerHTML = "Click me"; //in case one wants to get a new name with an empty string
-        } else {
-          let spiritAnimal = getSpiritAnimal();
-          outputPar.innerHTML = `${name} - ${spiritAnimal}`;
-        }
-      };
+      clearEventListeners();
+      inputField.oninput = inputListener;
   }
 };
