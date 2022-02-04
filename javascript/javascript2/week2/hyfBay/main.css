@@ -1,0 +1,265 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Belleza", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*Header section*/
+
+header {
+  margin-bottom: 10px;
+  padding: 0px 20px;
+  background-color: #c42217;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid lightgrey;
+  box-shadow: 2px 2px 2px lightgrey;
+}
+
+.header-flex {
+  margin-left: 8%;
+}
+
+.nav-bar {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+}
+
+.nav {
+  width: 140px;
+  display: inline-flex;
+  list-style: none;
+  justify-content: space-evenly;
+  margin-left: 1%;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.25rem;
+  padding: 10px;
+  border-radius: 4%;
+}
+
+.hover a:hover {
+  color: #c42217;
+  background-color: white;
+}
+
+#cart {
+  width: 25px;
+}
+
+#cart-mobile {
+  display: none;
+}
+
+/*Inputs and button*/
+
+input,
+select,
+button {
+  margin-right: 10px;
+  background-color: #fff;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  color: #c42217;
+  border: 1px solid #c42217;
+  padding: 10px 15px;
+  border-radius: 15px;
+}
+
+input:focus,
+select:focus {
+  outline: none !important;
+  border-color: #c42217;
+}
+
+/*Button*/
+/* From cssbuttons.io by @marcos700x - modified */
+button {
+  font-weight: 400;
+  font-size: 1em;
+  transition: transform 0.3s ease, color 0.5s ease;
+}
+
+button::before {
+  content: "";
+  inset: 0 0 0 0;
+  margin: auto;
+  height: 0px;
+  width: 0px;
+  position: absolute;
+  background-color: #c42217;
+  z-index: -1;
+  border-radius: 50%;
+  transition: all 0.7s ease;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+button:hover {
+  color: #fff;
+}
+
+button:hover:before {
+  height: 200px;
+  width: 200px;
+}
+
+/*Main*/
+
+main {
+  display: block;
+  /*width: 100%;*/
+  min-height: 100vh;
+  padding: 5%;
+  text-align: center;
+  background-color: white;
+}
+
+ul {
+  text-align: center;
+  list-style: none;
+  margin-top: 30px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  grid-column-gap: 3%;
+  grid-row-gap: 3%;
+}
+
+.product {
+  display: block;
+  padding: 20px 20px;
+  width: auto;
+  background-color: whitesmoke;
+  border: 1px white solid;
+  opacity: 90%;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.product:hover {
+  border: 1px #c42217 solid;
+  border-radius: 15px;
+}
+
+h1 {
+  font-size: 1.15em;
+}
+
+br {
+  line-height: 2px;
+}
+
+footer {
+  width: 100%;
+  height: auto;
+  margin-top: 10%;
+  padding: 3% 3%;
+  background-color: #c42217;
+  text-align: center;
+  color: white;
+  line-height: 2.5em;
+}
+
+svg {
+  fill: #fff;
+  margin: 0 10px;
+}
+/*Media Queries*/
+@media only screen and (max-width: 850px) {
+  html,
+  body {
+    text-align: center;
+  }
+  main {
+    width: 100%;
+    min-height: 100%;
+    margin: auto;
+  }
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 0;
+  }
+
+  .header-flex {
+    margin: auto;
+  }
+
+  #logo {
+    width: 120px;
+  }
+  .nav-bar {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 300px;
+  }
+
+  .nav {
+    width: 100px;
+  }
+
+  .nav a {
+    font-size: 1em;
+  }
+  .controls {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: auto;
+    grid-gap: 10px;
+    margin-left: 9%;
+  }
+
+  #cart-mobile {
+    display: inline;
+  }
+
+  #cart-mobile a:hover {
+    color: #c42217;
+    background-color: white;
+  }
+
+  /*ul li {
+    margin: 10px 10px;
+  }*/
+
+  .productList {
+    margin-left: 10%;
+    margin-bottom: 5%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    text-align: center;
+  }
+
+  .product {
+    padding: 30px 40px;
+  }
+
+  #cart {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  } /*This dynamic data blew up my mind and my footer*/
+  /*I will hide it for now - will be better to use JS or jQuery to make it look good*/
+}
