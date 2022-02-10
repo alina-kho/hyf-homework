@@ -63,6 +63,8 @@ priceSearch.oninput = renderFilterProducts;
 dropdown.onchange = renderFilterProducts;
 
 //Clean filters button onclick event
+const clearButton = document.querySelector("#clear");
+
 clearButton.onclick = function (event) {
   priceSearch.value = "";
   productSearch.value = "";
