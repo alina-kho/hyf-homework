@@ -19,7 +19,7 @@ console.log(longTitledMovies);
 
 const eightiesMovies = movies.filter(
   (movie) => movie.year >= 1980 && movie.year <= 1989
-);
+).length;
 
 console.log(eightiesMovies);
 
@@ -65,12 +65,13 @@ const keyWords = {
 
 movies.forEach((movie) => {
   if (movie.title.toLowerCase().includes("surfer")) {
-    return keyWords.Surfer++, keyWords.Total++;
+    keyWords.Surfer++, keyWords.Total++;
   } else if (movie.title.toLowerCase().includes("alien")) {
-    return keyWords.Alien++, keyWords.Total++;
+    keyWords.Alien++, keyWords.Total++;
   } else if (movie.title.toLowerCase().includes("benjamin")) {
-    return keyWords.Benjamin++, keyWords.Total++;
+    keyWords.Benjamin++, keyWords.Total++;
   }
+  return keyWords.Total;
 });
 
 console.log(keyWords);
