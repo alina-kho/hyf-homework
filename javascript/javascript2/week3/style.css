@@ -1,0 +1,16 @@
+/*Just so it looks a bit better*/
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  line-height: 0.3em;
+}
+
+button {
+  width: 100px;
+  margin-bottom: 10px;
+}
+
+#map {
+  width: 100%;
+}

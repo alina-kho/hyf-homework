@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600&family=Shizuru&display=swap");
+    </style>
+    <title>Fastest presser game</title>
+  </head>
+  <body>
+    <h1>Fastest Presser</h1>
+    <input type="number" id="gameTime" />
+    <button id="start">Start Game</button>
+    <div class="info-container"><p id="info"></p></div>
+    <div class="confettis">
+      <canvas id="canvasS"></canvas>
+      <canvas id="canvasL"> </canvas>
+    </div>
+    <div class="gameplay">
+      <div class="container" id="s-container">
+        Press S
+        <p id="s"></p>
+      </div>
+      <div class="container" id="l-container">
+        Press L
+        <p id="l"></p>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.13/dist/index.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
