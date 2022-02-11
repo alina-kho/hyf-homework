@@ -36,7 +36,7 @@ input:focus {
   outline: none;
 }
 /*Button*/
-/* From cssbuttons.io */
+/* Idea from cssbuttons.io - modified*/
 button {
   padding: 1.3em 3em;
   font-size: 12px;
