@@ -11,7 +11,7 @@ const infoField = document.querySelector("#info");
 let countL = 0;
 let countS = 0;
 
-const keyDownListner = function (event) {
+const keyUpListener = function (event) {
   if (event.key.toLowerCase() === "s") {
     countS++;
     pressS.innerHTML = countS;
@@ -62,7 +62,7 @@ startButton.onclick = function (event) {
       countL = 0;
       countS = 0;
     }, inputFieldValue * 1000);
-    document.addEventListener("keydown", keyDownListner);
+    document.addEventListener("keyup", keyDownListener);
   } else {
     infoField.innerHTML = "Please enter duration of the game";
   }
