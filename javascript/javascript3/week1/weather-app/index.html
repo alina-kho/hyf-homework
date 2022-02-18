@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>WeatherApp</title>
+  </head>
+  <body>
+    <header>
+      <img src="images/logo.png" alt="logo" />
+    </header>
+    <main>
+      <div class="inputs">
+        <input type="text" />
+        <button class="searchButton">Search</button>
+        <button class="myLoc">Use my location</button>
+      </div>
+      <div class="weather">
+        <div class="box">
+          <p class="city"></p>
+          <p class="message"></p>
+          <div class="mainInfo">
+            <div class="weatherIcon"></div>
+            <p class="weatherType"></p>
+            <p class="temp"></p>
+            <p class="feelsLike"></p>
+          </div>
+        </div>
+        <div class="flex secondary">
+          <p class="wind minibox"></p>
+          <p class="clouds minibox"></p>
+        </div>
+        <div class="dayTime flex secondary">
+          <p class="sunrise minibox"></p>
+          <p class="sunset minibox"></p>
+        </div>
+        <div id="map"></div>
+      </div>
+    </main>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrM00R_W5_7t8Kcud2PvP6KCW6L8eDzvI&=initMap"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
