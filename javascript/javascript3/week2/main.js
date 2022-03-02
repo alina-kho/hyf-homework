@@ -27,7 +27,7 @@ async function resolvePromiseAsync(resolveAfter) {
     await resolvePromise(resolveAfter); //made it general so the code is reusable
     console.log("Async await is executed");
   } catch (error) {
-    console.log.bind(console);
+    console.log(error);
   }
 }
 
@@ -72,7 +72,7 @@ getCurrentLocation()
 
 // Using promises and .then
 Promise.resolve()
-  .then(function (resolve) {
+  .then(function () {
     return new Promise((resolve) =>
       setTimeout(
         () =>
@@ -91,16 +91,16 @@ Promise.resolve()
 // Using async await
 
 function fetchAPI() {
-  try {
-    setTimeout(async () => {
+  setTimeout(async () => {
+    try {
       const fetchedAPI = await fetch("https://cat-fact.herokuapp.com/facts");
       const results = await fetchedAPI.json();
       const catFacts = await results.map((el) => el.text); //getting the cat facts from an array of objects
       console.log(catFacts);
-    }, 3000);
-  } catch (error) {
-    console.log(error);
-  }
+    } catch (error) {
+      console.log(error);
+    }
+  }, 3000);
 }
 
 //Executing the function
