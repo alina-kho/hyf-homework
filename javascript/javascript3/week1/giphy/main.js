@@ -12,7 +12,7 @@ let resultsArray;
 
 //event listeners
 btn.addEventListener("click", searchingGiphs);
-// resultsNum.addEventListener("input", sliceResults);
+// resultsNum.addEventListener("input", sliceResults); - integrated in the API fetch link
 
 //function to search gifs based on keywords
 function searchingGiphs() {
