@@ -12,15 +12,15 @@ let resultsArray;
 
 //event listeners
 btn.addEventListener("click", searchingGiphs);
-resultsNum.addEventListener("input", sliceResults);
+// resultsNum.addEventListener("input", sliceResults);
 
 //function to search gifs based on keywords
 function searchingGiphs() {
   let wordSearchValue = wordSearch.value.trim().replace(/ /g, "+"); // converting search words into a right format for url
-  if (wordSearchValue != "") {
+  if (wordSearchValue !== "") {
     (async function () {
       const response = await fetch(
-        `http://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${wordSearchValue}`
+        `http://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${wordSearchValue}&limit=${resultsNum.value}`
       );
       if (response.ok) {
         message.innerHTML = "";
@@ -51,12 +51,12 @@ function renderResults(resultsArray) {
 }
 
 //the easiest way to get rid of unneccessary gifs in our case - slice the array
-function sliceResults() {
-  let resultsNumValue = resultsNum.value;
-  if (resultsNumValue != "" && resultsNumValue != NaN) {
-    let slicedResults = resultsArray.slice(0, resultsNumValue);
-    renderResults(slicedResults);
-  } else {
-    renderResults(resultsArray);
-  }
-}
+// function sliceResults() {
+//   let resultsNumValue = resultsNum.value;
+//   if (resultsNumValue != "" && resultsNumValue != NaN) {
+//     let slicedResults = resultsArray.slice(0, resultsNumValue);
+//     renderResults(slicedResults);
+//   } else {
+//     renderResults(resultsArray);
+//   }
+// }
