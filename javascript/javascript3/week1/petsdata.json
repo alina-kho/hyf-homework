@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Ricky",
+    "age": 2,
+    "breed": "sharpei",
+    "color": "apricot",
+    "owner": "Dave",
+    "friends": ["Coco", "Spike"]
+  },
+  {
+    "name": "Coco",
+    "age": 3,
+    "breed": "corgi",
+    "color": "orange",
+    "owner": "Katie",
+    "friends": ["Ricky", "Spike"]
+  },
+  {
+    "name": "Spike",
+    "age": 3,
+    "breed": "akita",
+    "color": "orange-white",
+    "owner": "Barney",
+    "friends": ["Ricky", "Coco"]
+  }
+]

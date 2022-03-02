@@ -43,7 +43,7 @@ startButton.onclick = function (event) {
   if (inputFieldValue != 0) {
     startButton.innerHTML = "Play again";
     setTimeout(() => {
-      document.removeEventListener("keydown", keyDownListner);
+      document.removeEventListener("keyup", keyUpListener);
       if (countL > countS) {
         console.log("L-Player won!");
         infoField.innerHTML = "L-Player won!";
@@ -62,7 +62,7 @@ startButton.onclick = function (event) {
       countL = 0;
       countS = 0;
     }, inputFieldValue * 1000);
-    document.addEventListener("keyup", keyDownListener);
+    document.addEventListener("keyup", keyUpListener);
   } else {
     infoField.innerHTML = "Please enter duration of the game";
   }
