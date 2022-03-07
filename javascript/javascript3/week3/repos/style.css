@@ -1,0 +1,12 @@
+.user {
+  margin-bottom: 20px;
+}
+
+body ul {
+  list-style: none;
+}
+
+.repo {
+  list-style: square;
+  margin-left: 10px;
+}
