@@ -26,18 +26,18 @@ class Circle {
     this.fillColor = fillColor;
   }
 
-  draw() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, this.r, this.startAngle, this.endAngle);
-    ctx.fillStyle = this.fillColor;
-    ctx.fill();
-    ctx.stroke();
+  draw(context) {
+    context.beginPath();
+    context.arc(this.x, this.y, this.r, this.startAngle, this.endAngle);
+    context.fillStyle = this.fillColor;
+    context.fill();
+    context.stroke();
   }
 }
 
 //Test
 const c1 = new Circle(50, 50, 20, 0, 2 * Math.PI, "#000000");
-c1.draw();
+c1.draw(ctx);
 
 //Task 3 - Interval drawing
 function drawRandomCircle() {
@@ -51,7 +51,7 @@ function drawRandomCircle() {
     2 * Math.PI,
     `#${Math.floor(Math.random() * 0xffffff).toString(16)}`
   );
-  circle.draw();
+  circle.draw(ctx);
 }
 
 function drawOnInterval() {
@@ -76,5 +76,5 @@ canvas.addEventListener("pointermove", (e) => {
     2 * Math.PI,
     `#${Math.floor(Math.random() * 0xffffff).toString(16)}`
   );
-  circle.draw();
+  circle.draw(ctx);
 });
