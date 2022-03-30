@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "title": "Indian food in the summer",
+    "maxNumberOfGuests": 5,
+    "description": "A nice night out eating delicious indian food",
+    "createdAt": "2019/12/7 14:34",
+    "price": 67
+  },
+
+  {
+    "id": 2,
+    "title": "Chinese food",
+    "maxNumberOfGuests": 3,
+    "description": "A nice night out eating delicious chinese food",
+    "createdAt": "2019/12/15 12:57",
+    "price": 70
+  },
+
+  {
+    "id": 3,
+    "title": "Portuguese lunch",
+    "maxNumberOfGuests": 6,
+    "description": "Let's enjoy postuguese cuisine",
+    "createdAt": "2020/01/03 12:12",
+    "price": 50
+  },
+
+  {
+    "id": 4,
+    "title": "Mexican lunch",
+    "maxNumberOfGuests": 7,
+    "description": "Let's enjoy Mexican cuisine",
+    "createdAt": "2020/01/03 12:12",
+    "price": 40
+  }
+]
