@@ -6,9 +6,6 @@ const meals = require("./data/meals.json");
 const reservations = require("./data/reservations.json");
 const reviews = require("./data/reviews.json");
 
-// port
-const port = 3000;
-
 // this is where you will be adding your routes
 app.get("/", async (request, response) => {
   response.send("Meal Sharing Web App");
@@ -40,7 +37,7 @@ app.get("/reservation", async (request, response) => {
   response.send(reservations[Math.floor(Math.random() * reservations.length)]);
 });
 
-//creating nessecary arrays
+//creating necessary arrays
 const mealsWithReview = meals.map((meal) => {
   meal.reviews = [];
   reviews.filter((review) => {
