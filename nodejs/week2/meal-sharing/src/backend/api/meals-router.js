@@ -6,36 +6,62 @@ const meals = require("./../data/meals.json");
 
 router.get("/", async (request, response) => {
   try {
-    const supportedParams = ["maxPrice", "limit", "title", "createdAfter"]; //will be needed for query validation
-    const maxPrice = parseInt(request.query.maxPrice); //converting to int
-    const limit = parseInt(request.query.limit); //converting to int
+    const maxPrice = request.query.maxPrice;
+    const limit = request.query.limit;
     const title = request.query.title;
     const createdAfter = request.query.createdAfter;
-
+    let results = meals;
     //Checking if there are any queries
-    if (Object.keys(request.query) != 0) {
+    if (Object.keys(request.query).length !== 0) {
+      let supportedParams = false; //boolean for query validation
       if (maxPrice) {
-        response.send(meals.filter((meal) => meal.price <= maxPrice));
-      } else if (title) {
-        response.send(
-          meals.filter(
-            (meal) => meal.title.toLowerCase().includes(title.toLowerCase()) //getting rid of case sensitivity
-          )
-        );
-      } else if (createdAfter) {
-        if (new Date(createdAfter) != "Invalid Date") {
-          response.send(
-            meals.filter(
-              (meal) => new Date(meal.createdAt) > new Date(createdAfter)
-            )
-          );
+        if (!isNaN(parseInt(maxPrice))) {
+          results = results.filter((meal) => meal.price <= parseInt(maxPrice));
+          supportedParams = true;
         } else {
-          response.send(400);
+          response
+            .status(400)
+            .json(
+              "Failed to parse the maximum price. Check if it has a numerical value"
+            );
+          return;
         }
-      } else if (limit) {
-        response.send(meals.slice(0, limit));
-      } else if (!supportedParams.includes(request.query)) {
-        response.send(400, "This query parameter is not supported");
+      }
+
+      if (createdAfter) {
+        if (new Date(createdAfter) != "Invalid Date") {
+          results = results.filter(
+            (meal) => new Date(meal.createdAt) > new Date(createdAfter)
+          );
+          supportedParams = true;
+        } else {
+          response.status(400).json("Failed to parse the date");
+          return;
+        }
+      }
+
+      if (title) {
+        results = results.filter(
+          (meal) => meal.title.toLowerCase().includes(title.toLowerCase()) //getting rid of case sensitivity
+        );
+        supportedParams = true;
+      }
+
+      if (limit) {
+        if (!isNaN(parseInt(limit))) {
+          results = results.slice(0, limit);
+          supportedParams = true;
+        } else {
+          response.status(400).json("Failed to parse limit");
+          return;
+        }
+      }
+
+      if (supportedParams === true) {
+        response.send(results);
+      } else {
+        response.status(400).json("This query parameter is not supported");
+        return;
       }
     } else {
       response.send(meals);
@@ -66,3 +92,41 @@ router.get("/:id", async (request, response) => {
 });
 
 module.exports = router;
+
+// if (maxPrice) {
+//   if (!isNaN(parseInt(maxPrice))) {
+//     response.send(meals.filter((meal) => meal.price <= maxPrice));
+//   } else {
+//     response.send(
+//       400,
+//       "Failed to parse the maximum price. Check if it has a numerical value"
+//     );
+//   }
+// } else if (title) {
+//   response.send(
+//     meals.filter(
+//       (meal) => meal.title.toLowerCase().includes(title.toLowerCase()) //getting rid of case sensitivity
+//     )
+//   );
+// } else if (createdAfter) {
+//   if (new Date(createdAfter) != "Invalid Date") {
+//     response.send(
+//       meals.filter(
+//         (meal) => new Date(meal.createdAt) > new Date(createdAfter)
+//       )
+//     );
+//   } else {
+//     response.send(400);
+//   }
+// } else if (limit) {
+//   if (!isNaN(parseInt(limit))) {
+//     response.send(meals.slice(0, limit));
+//   } else {
+//     response.send(
+//       400,
+//       "Failed to parse the limit. It should have a numerical value"
+//     );
+//   }
+// } else if (!supportedParams.includes(request.query)) {
+//   response.send(400, "This query parameter is not supported");
+// }
