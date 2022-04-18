@@ -60,7 +60,7 @@ app.get("/calculator/divide", (req, res) => {
 app.post("/calculator/add", (req, res) => {
   const firstParam = req.body.firstParam;
   const secondParam = req.body.secondParam;
-  if (!isNaN(firstParam) && !isNaN(secondParam)) {
+  if (!isNaN(parseInt(firstParam)) && !isNaN(parseInt(secondParam))) {
     res.status(200).json(parseInt(firstParam) + parseInt(secondParam));
   } else {
     res.status(400).send("Failed to parse params. Please check the format");
@@ -70,7 +70,7 @@ app.post("/calculator/add", (req, res) => {
 app.post("/calculator/sub", (req, res) => {
   const firstParam = req.body.firstParam;
   const secondParam = req.body.secondParam;
-  if (!isNaN(firstParam) && !isNaN(secondParam)) {
+  if (!isNaN(parseInt(firstParam)) && !isNaN(parseInt(secondParam))) {
     res.status(200).json(parseInt(firstParam) - parseInt(secondParam));
   } else {
     res.status(400).send("Failed to parse params. Please check the format");
@@ -80,7 +80,7 @@ app.post("/calculator/sub", (req, res) => {
 app.post("/calculator/multiply", (req, res) => {
   const firstParam = req.body.firstParam;
   const secondParam = req.body.secondParam;
-  if (!isNaN(firstParam) && !isNaN(secondParam)) {
+  if (!isNaN(parseInt(firstParam)) && !isNaN(parseInt(secondParam))) {
     res.status(200).json(parseInt(firstParam) * parseInt(secondParam));
   } else {
     res.status(400).send("Failed to parse params. Please check the format");
@@ -90,7 +90,7 @@ app.post("/calculator/multiply", (req, res) => {
 app.post("/calculator/divide", (req, res) => {
   const firstParam = req.body.firstParam;
   const secondParam = req.body.secondParam;
-  if (!isNaN(firstParam) && !isNaN(secondParam)) {
+  if (!isNaN(parseInt(firstParam)) && !isNaN(parseInt(secondParam))) {
     res.status(200).json(parseInt(firstParam) / parseInt(secondParam));
   } else {
     res.status(400).send("Failed to parse params. Please check the format");
