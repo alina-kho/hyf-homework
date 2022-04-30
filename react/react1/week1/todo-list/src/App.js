@@ -1,5 +1,5 @@
 import "./App.css";
-import ToDoList from "./components/toDoList";
+import ToDoList from "./components/ToDoList";
 
 /* Components are highlighted in CSS - App, ToDoList, ToDoItem.
 I made a ToDoList a child of App meaning that some more features (e.g. input) will be added.

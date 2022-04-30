@@ -1,5 +1,5 @@
 import todos from "../data/todos";
-import ToDoItem from "./toDoItem";
+import ToDoItem from "./ToDoItem";
 
 export default function ToDoList() {
   return (
@@ -8,7 +8,7 @@ export default function ToDoList() {
         {todos.map((todo) => {
           return (
             <ToDoItem
-              key={todo.id}
+              key={todos.indexOf(todo) + 1}
               description={todo.description}
               deadline={todo.deadline}
             />
