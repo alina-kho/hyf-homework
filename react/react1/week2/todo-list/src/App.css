@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+.toDoItem {
+  list-style: none;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.notDone {
+  text-decoration: none;
+}
