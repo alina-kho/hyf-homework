@@ -15,24 +15,31 @@ const newTodosArray = [
   "Go to bed early",
 ];
 
+const ids = [1, 2, 3];
+
 function App() {
   const [toDoList, setTodos] = useState(todos);
 
   const addRandomTodo = () => {
+    // console.log(Math.max(toDoList.map((todo) => todo.id)));
     const newToDo = {
-      id: toDoList.length + 1,
+      id: ids[ids.length - 1] + 1,
       description:
         newTodosArray[Math.floor(Math.random() * newTodosArray.length)],
     };
+    ids.push(newToDo.id);
     setTodos((prevTodos) => {
       return [...prevTodos, newToDo];
     });
   };
 
   function deleteTodo(e) {
-    console.log(e.target.parentNode.id);
-    const todoToDelete = toDoList[e.target.parentNode.id - 1];
-    const newToDos = toDoList.filter((todo) => todo.id !== todoToDelete.id);
+    // console.log(e.target.parentNode.id);
+    const todoToDelete = e.target.parentNode.id;
+    const newToDos = toDoList.filter(
+      (todo) => todo.id !== parseInt(todoToDelete)
+    );
+    // console.log(newToDos);
     setTodos(newToDos);
   }
 

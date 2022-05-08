@@ -12,7 +12,6 @@ export default function ToDoList(props) {
       <div className="toDoList">
         <ul>
           {props.toDoList.map((todo) => {
-            // console.log(todo);
             return (
               <ToDoItem todo={todo} key={todo.id} deleteTodo={props.onDelete} />
             );

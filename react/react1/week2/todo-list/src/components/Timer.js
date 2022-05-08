@@ -1,11 +1,7 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Timer = () => {
-  const [count, setCount] = useState(() => {
-    console.log("Timer started");
-    return 0;
-  });
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     setTimeout(() => {
