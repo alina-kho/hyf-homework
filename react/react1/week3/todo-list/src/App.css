@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+}
+
+.toDoItem {
+  list-style: none;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.notDone {
+  text-decoration: none;
+}
+
+.timer {
+  margin: 10px 0;
+}
+
+.borderDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  margin: 10px 20px;
+  border: 2px solid black;
+}
+
+.toDoItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.toDoItem button {
+  height: fit-content;
+}
