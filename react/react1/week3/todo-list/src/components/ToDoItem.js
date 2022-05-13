@@ -10,8 +10,12 @@ export const ToDoItem = (props) => {
   };
 
   const finishEditing = (e) => {
-    props.updateDescription(e, updatedDescription);
-    setEditState(false);
+    if (updatedDescription !== "") {
+      props.updateDescription(e, updatedDescription);
+      setEditState(false);
+    } else {
+      alert(`Please enter todo's description!`);
+    }
   };
 
   const handleEditInput = (e) => {
