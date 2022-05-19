@@ -6,26 +6,27 @@ import { SearchContextProvider } from "./components/SearchContext";
 import { ErrorHandler } from "./components/ErrorHandler";
 
 function App() {
-  //Defining states
+  //Defining initial states
   const [results, setResults] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [errorMessage, setErrorMessage] = useState(null);
   const [isLoading, setLoading] = useState(true);
 
+  //Fetching data - rerender when inputValue changes
   useEffect(() => {
     setLoading(true);
     getGithubUsers(inputValue)
       .then((json) => {
         setErrorMessage(null);
-
+        setLoading(false);
+        // console.log(json);
         setResults(json);
       })
       .catch((error) => {
-        console.log(error);
-
+        // console.log(error);
+        setLoading(false);
         setErrorMessage(error.message);
-      })
-      .finally(setLoading(false));
+      });
   }, [inputValue]);
 
   const contextValues = {

@@ -5,6 +5,7 @@ import { UserProfile } from "./UserProfile";
 export const Results = () => {
   const contextValue = useContext(SearchContext);
 
+  //Rendering results according to states
   return (
     <div className="output">
       {contextValue.isLoading ? (
