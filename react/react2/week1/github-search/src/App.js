@@ -5,6 +5,20 @@ import { useState, useEffect } from "react";
 import { SearchContextProvider } from "./components/SearchContext";
 import { ErrorHandler } from "./components/ErrorHandler";
 
+//function for getting  a search result from an API
+async function getGithubUsers(input) {
+  const response = await fetch(
+    `https://api.github.com/search/users?q=${input}`
+  );
+  if (!response.ok) {
+    throw new Error(response.status);
+  } else {
+    const json = await response.json();
+    console.log(json);
+    return json;
+  }
+}
+
 function App() {
   //Defining initial states
   const [results, setResults] = useState([]);
@@ -45,19 +59,6 @@ function App() {
       <Results />
     </SearchContextProvider>
   );
-}
-
-async function getGithubUsers(input) {
-  const response = await fetch(
-    `https://api.github.com/search/users?q=${input}`
-  );
-  if (!response.ok) {
-    throw new Error(response.status);
-  } else {
-    const json = await response.json();
-    console.log(json);
-    return json;
-  }
 }
 
 export default App;
