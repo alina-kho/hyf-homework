@@ -5,3 +5,4 @@ Paprika
 Onion
 Cabbage
 Zuccini
+Garlic
