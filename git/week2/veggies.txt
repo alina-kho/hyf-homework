@@ -1,5 +1,7 @@
 Tomato
 Cucumber
-Aubergine
+Potato
 Paprika
 Onion
+Cabbage
+Zuccini
