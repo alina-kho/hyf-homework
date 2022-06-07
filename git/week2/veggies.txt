@@ -5,3 +5,5 @@ Onion
 Selery
 Aubergine
 Potato
+Pepper
+Selery
